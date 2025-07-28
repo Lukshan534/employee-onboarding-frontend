@@ -1,0 +1,86 @@
+<div class="form-container">
+  <h2>{{ isEditMode ? 'Update Employee' : 'Add New Employee' }}</h2>
+
+  <form #empForm="ngForm" (ngSubmit)="onSubmit()">
+    <!-- First Name -->
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input
+        type="text"
+        id="firstName"
+        name="firstName"
+        [(ngModel)]="employee.firstName"
+        required
+      />
+    </div>
+
+    <!-- Last Name -->
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input
+        type="text"
+        id="lastName"
+        name="lastName"
+        [(ngModel)]="employee.lastName"
+        required
+      />
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="employee.email"
+        required
+      />
+    </div>
+
+    <!-- Date of Joining -->
+    <div class="form-group">
+      <label for="dateOfJoining">Date of Joining</label>
+      <input
+        type="date"
+        id="dateOfJoining"
+        name="dateOfJoining"
+        [(ngModel)]="employee.dateOfJoining"
+        required
+      />
+    </div>
+
+    <!-- Onboarding Checkbox -->
+    <div class="form-group checkbox-group">
+      <label>
+        <input
+          type="checkbox"
+          name="isOnboarded"
+          [(ngModel)]="employee.isOnboarded"
+        />
+        Onboarded
+      </label>
+    </div>
+
+    <!-- Department Dropdown -->
+    <div class="form-group">
+      <label for="departmentId">Department</label>
+      <select
+        id="departmentId"
+        name="departmentId"
+        [(ngModel)]="employee.departmentId"
+        required
+      >
+        <option value="" disabled selected>Select Department</option>
+        <option *ngFor="let dept of departments" [value]="dept.departmentId">
+          {{ dept.name }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="submit-button">
+      {{ isEditMode ? 'Update' : 'Create' }}
+    </button>
+  </form>
+</div>

@@ -1,0 +1,73 @@
+.list-wrapper {
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+  padding: 60px 20px;
+  min-height: 100vh;
+}
+
+.list-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 1000px;
+  margin: auto;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.add-btn {
+  background: #20c997;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.add-btn:hover {
+  background: #17a589;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #f1f1f1;
+}
+
+.badge-on {
+  background: #28a745;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.badge-off {
+  background: #ffc107;
+  color: #333;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.detail-link {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.detail-link:hover {
+  text-decoration: underline;
+}

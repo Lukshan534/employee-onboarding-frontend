@@ -1,0 +1,20 @@
+<div class="detail-wrapper" *ngIf="employee">
+  <div class="detail-card">
+    <h2>Employee Profile</h2>
+
+    <p><strong>Name:</strong> {{ employee.firstName }} {{ employee.lastName }}</p>
+    <p><strong>Email:</strong> {{ employee.email }}</p>
+    <p><strong>Department:</strong> {{ employee.departmentName }}</p>
+    <p><strong>Joining:</strong> {{ employee.dateOfJoining | date }}</p>
+
+    <div class="toggle">
+      <input type="checkbox" [(ngModel)]="employee.isOnboarded" id="onboardedCheck" />
+      <label for="onboardedCheck">Mark as Onboarded</label>
+    </div>
+
+    <div class="actions">
+      <button (click)="updateStatus()">Update Status</button>
+      <a routerLink="/employees">← Back</a>
+    </div>
+  </div>
+</div>

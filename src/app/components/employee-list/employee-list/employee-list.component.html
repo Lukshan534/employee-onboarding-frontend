@@ -1,0 +1,35 @@
+<div class="list-wrapper">
+  <div class="list-card">
+    <div class="header">
+      <h2>Employee Directory</h2>
+      <a routerLink="/add" class="add-btn">+ Add Employee</a>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Department</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of employees">
+          <td>{{ emp.firstName }} {{ emp.lastName }}</td>
+          <td>{{ emp.email }}</td>
+          <td>{{ emp.departmentName }}</td>
+          <td>
+            <span [class.badge-on]="emp.isOnboarded" [class.badge-off]="!emp.isOnboarded">
+              {{ emp.isOnboarded ? 'Onboarded' : 'Pending' }}
+            </span>
+          </td>
+          <td>
+            <a [routerLink]="['/employee', emp.employeeId]" class="detail-link">Details</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
